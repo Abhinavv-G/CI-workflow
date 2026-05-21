@@ -12,3 +12,4 @@ Build a Docker image
 Run tests inside the container using pytest
 Authenticate with Docker Hub
 Push the Docker image to Docker Hub
+<img width="1002" height="507" alt="p2" src="https://github.com/user-attachments/assets/bf99d01e-7cfb-4cdb-8f48-1466924db711" />
