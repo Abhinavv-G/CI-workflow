@@ -13,7 +13,7 @@ Run tests inside the container using pytest
 Authenticate with Docker Hub
 Push the Docker image to Docker Hub
 
-<img width="1002" height="507" alt="p2" src="https://github.com/user-attachments/assets/bf99d01e-7cfb-4cdb-8f48-1466924db711" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/3ac9a1dd-2dfb-4f63-a906-559170904a49" />
 
 ## Run Locally
 
