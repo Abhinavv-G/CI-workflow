@@ -1,6 +1,6 @@
 # Continuous Integration Pipeline with GitHub Actions
 
-Automated Continuous Integration (CI) pipeline that builds, tests, validates, and publishes a Dockerized Flask-based System Diagnostics API to Docker Hub on every push to the `main` branch.
+Automated Continuous Integration (CI) pipeline that builds, tests, validates, and publishes a Dockerized Flask System Diagnostics API to Docker Hub on every push to the `main` branch.
 
 ---
 
@@ -37,13 +37,12 @@ Push Versioned Docker Images
 
 ## Tech Stack
 
-- GitHub Actions
-- Docker
-- Docker Hub
 - Python
 - Flask
 - Pytest
-
+- Docker
+- Docker Hub
+- GitHub Actions
 ---
 
 ## Pipeline Workflow
@@ -52,7 +51,7 @@ Push Versioned Docker Images
 - Checks out the latest repository source code.
 - Builds a Docker image tagged with the Git commit SHA.
 - Executes the Pytest test suite inside the Docker container.
-- Starts the container and validates the `/health` endpoint.
+- Starts the container and verifies the `/health` endpoint before publishing the image.
 - Authenticates securely with Docker Hub using GitHub Secrets.
 - Publishes Docker images tagged as both `latest` and the Git commit SHA.
 
@@ -64,10 +63,10 @@ Push Versioned Docker Images
 |----------|-------------|
 | `/` | Returns application status |
 | `/health` | Health check endpoint |
-| `/system` | Returns operating system and runtime information |
-| `/app-info` | Returns application metadata |
-| `/environment` | Displays selected environment information |
-| `/uptime` | Returns application uptime |
+| `/system` | Displays host operating system and runtime information |
+| `/app-info` | Displays application metadata |
+| `/environment` | Displays container environment information |
+| `/uptime` | Returns application uptime since startup |
 
 ---
 
@@ -75,7 +74,7 @@ Push Versioned Docker Images
 
 ```bash
 docker build -t devops-system-api .
-docker run -p 5000:5000 devops-system-api
+docker run -d -p 5000:5000 devops-system-api
 ```
 
 Visit:
@@ -93,3 +92,12 @@ http://localhost:5000/app-info
 http://localhost:5000/environment
 http://localhost:5000/uptime
 ```
+
+## Features
+
+- Automated CI workflow using GitHub Actions
+- Dockerized Flask application
+- Automated Pytest execution
+- Health check validation
+- Secure Docker Hub authentication using GitHub Secrets
+- Versioned Docker image publishing (`latest` and Git commit SHA)
