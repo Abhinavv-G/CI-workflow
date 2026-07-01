@@ -43,6 +43,7 @@ Push Versioned Docker Images
 - Docker
 - Docker Hub
 - GitHub Actions
+  
 ---
 
 ## Pipeline Workflow
