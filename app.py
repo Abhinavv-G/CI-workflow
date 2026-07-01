@@ -24,7 +24,7 @@ def info():
 
 
 @app.route("/app-info")
-def get_ma_infoz():
+def app-info():
     return jsonify({
         "application": "devops-app",
         "framework": "Flask",
