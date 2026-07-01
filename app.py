@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    print("Recieved a Request")
     return jsonify({"status": "ok", "message": "System Health API is running"})
 
 @app.route("/health")
