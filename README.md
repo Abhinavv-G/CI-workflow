@@ -94,6 +94,8 @@ http://localhost:5000/environment
 http://localhost:5000/uptime
 ```
 
+---
+
 ## Features
 
 - Automated CI workflow using GitHub Actions
