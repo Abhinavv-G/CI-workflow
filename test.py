@@ -23,3 +23,8 @@ def test_info(client):
     data = res.get_json()
     assert "os" in data
     assert "python_version" in data
+def test_random_image(client):
+    res = client.get("/random-image")
+    assert res.status_code == 200
+    assert "image_url" in res.get_json()
+    
