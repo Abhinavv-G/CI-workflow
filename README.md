@@ -1,34 +1,58 @@
-# CI Pipeline with GitHub Actions & Docker
+# Continuous Integration Pipeline with GitHub Actions
 
-Automated CI pipeline that tests, builds, and ships a Dockerized 
-Python application to Docker Hub on every push to main — zero manual steps.
+Automated Continuous Integration (CI) pipeline that builds, tests, and publishes a Dockerized Flask application to Docker Hub on every push to the `main` branch.
 
 ## Architecture
 
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/3ac9a1dd-2dfb-4f63-a906-559170904a49" />
-
-
+```
+Push to main
+      │
+      ▼
+GitHub Actions
+      │
+      ▼
+Checkout Repository
+      │
+      ▼
+Build Docker Image
+      │
+      ▼
+Run Pytest
+      │
+      ▼
+Docker Hub Login
+      │
+      ▼
+Push Versioned Docker Images
+```
 
 ## Tech Stack
-- GitHub Actions (CI/CD automation)
-- Docker + Docker Hub (containerization & registry)
-- Python + pytest (application & testing)
 
-## What the Pipeline Does
-1. Triggers on push to `main` or manual dispatch
-2. Checks out repository code
-3. Builds Docker image
-4. Runs pytest inside the container
-5. Authenticates with Docker Hub via GitHub Secrets
-6. Pushes image to Docker Hub
+- GitHub Actions
+- Docker
+- Docker Hub
+- Python
+- Flask
+- Pytest
+
+## Pipeline Workflow
+
+- Triggers automatically on every push to the `main` branch or via manual workflow dispatch.
+- Checks out the latest repository source code.
+- Builds a Docker image tagged with the Git commit SHA.
+- Executes the application's Pytest test suite inside the Docker container.
+- Authenticates securely with Docker Hub using GitHub Secrets.
+- Publishes Docker images tagged as both `latest` and the commit SHA.
 
 ## Run Locally
-docker build -t myapp .
-docker run myapp
 
+```bash
+docker build -t devops-app .
+docker run -p 5000:5000 devops-app
+```
 
+Visit:
 
-
-
-
-
+```
+http://localhost:5000/health
+```
