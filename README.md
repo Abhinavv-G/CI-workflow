@@ -4,6 +4,9 @@ Automated Continuous Integration (CI) pipeline that builds, tests, and publishes
 
 ## Architecture
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/2c226416-7678-49b3-8b0b-ec22e9ef4b5f" />
+
+
 ```
 Push to main
       │
