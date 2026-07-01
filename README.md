@@ -51,8 +51,8 @@ Push Versioned Docker Images
 ## Run Locally
 
 ```bash
-docker build -t devops-app .
-docker run -p 5000:5000 devops-app
+docker build -t my-devops-app .
+docker run -p 5000:5000 my-devops-app
 ```
 
 Visit:
