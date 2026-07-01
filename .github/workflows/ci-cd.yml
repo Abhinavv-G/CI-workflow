@@ -20,6 +20,13 @@ jobs:
       - name: Execute Pytest
         run: docker run --rm devops-app:${{ github.sha }} python -m pytest test.py
 
+      - name: Verify Application Health
+        run: |
+          docker run -d -p 5000:5000 --name app devops-app:${{ github.sha }}
+          sleep 5
+          curl --fail http://localhost:5000/health
+          docker stop app
+
       - name: Docker Hub Login
         uses: docker/login-action@v3
         with:
