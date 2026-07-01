@@ -1,6 +1,6 @@
-# CI/CD Pipeline with GitHub Actions & Docker
+# CI Pipeline with GitHub Actions & Docker
 
-Automated CI/CD pipeline that tests, builds, and ships a Dockerized 
+Automated CI pipeline that tests, builds, and ships a Dockerized 
 Python application to Docker Hub on every push to main — zero manual steps.
 
 ## Architecture
