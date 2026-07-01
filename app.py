@@ -24,11 +24,11 @@ def info():
     })
 
 
-@app.route("/get_ma_infoz")
+@app.route("/get-my-infoz")
 def get_ma_infoz():
     return jsonify({
-        "namez": "shank",
-        "gamez": "devops"
+        "namez": "ME",
+        "gamez": "DevOps"
     })
 
 
@@ -37,15 +37,6 @@ def random_image():
     return jsonify({
         "image_url": f"https://picsum.photos/400?seed={time.time_ns()}"
     })
-
-
-@app.route("/random-hollywood")
-def random_hollywood():
-    # loremflickr rotates images by tag; lock makes each response unique.
-    return jsonify({
-        "image_url": f"https://loremflickr.com/640/480/hollywood,celebrity?lock={time.time_ns()}"
-    })
-
 
 
 if __name__ == "__main__":
